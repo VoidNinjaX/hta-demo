@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Security Warning</title>
+    <script type="text/javascript">
+        function simulateHack() {
+            alert("Simulating a dangerous action...");
+
+            // Simulate file system access
+            document.body.innerHTML = "<h1>Accessing System...</h1>";
+            document.body.innerHTML += "<p>Accessing C:\\Windows\\System32...</p>";
+            document.body.innerHTML += "<p>Uploading sensitive data...</p>";
+
+            // Simulate command execution
+            setTimeout(function () {
+                document.body.innerHTML = "<h1>Your system is now compromised!</h1>";
+                document.body.innerHTML += "<p>This was a simulated attack for demonstration purposes.</p>";
+
+                // Show final warning
+                setTimeout(function () {
+                    alert("This is a demonstration of how dangerous mshta can be.\n\nIf this were a real attack, your system could now be compromised.\n\nAlways be cautious when running unknown commands!");
+                }, 2000);
+            }, 3000);
+        }
+    </script>
+</head>
+<body onload="simulateHack()">
+    <h1>Simulated Attack in Progress...</h1>
+</body>
+</html>
